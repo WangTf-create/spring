@@ -1,0 +1,12 @@
+server:
+  port: 80
+
+
+spring:
+  application:
+    name: cloud-consumer-service
+
+  #zk机器的ip加端口号
+  cloud:
+    zookeeper:
+      connect-string: 10.211.55.6:2181,10.211.55.7:2181,10.211.55.8:2181
