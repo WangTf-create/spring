@@ -31,13 +31,13 @@ public class PaymentController {
     private String serverPort;
 
     @GetMapping(value = "/v1/payment/discovery")
-    public Object discovery(){
+    public Object discovery() {
         for (String element : discoveryClient.getServices()) {
-            log.info("****element:"+element);
+            log.info("****element:" + element);
         }
         List<ServiceInstance> instances = discoveryClient.getInstances("CLOUD-PAYMENT-SERVICE");
         for (ServiceInstance instance : instances) {
-            log.info(instance.getInstanceId()+"\t"+instance.getHost()+"\t"+instance.getPort()+"\t"+instance.getUri());
+            log.info(instance.getInstanceId() + "\t" + instance.getHost() + "\t" + instance.getPort() + "\t" + instance.getUri());
         }
         return this.discoveryClient;
     }
@@ -57,7 +57,16 @@ public class PaymentController {
     public String getPaymentById(@PathVariable("id") Long id) {
         log.info("*******查询ID：" + id);
         Payment payment = paymentService.getPaymentById(id);
-        return CommonResult.okMessage(payment,serverPort);
+        return CommonResult.okMessage(payment, serverPort);
+    }
+
+
+    /**
+     * 用于测试自定义的LB（load balance）负载均衡
+     */
+    @GetMapping(value = "/payment/custom/balance")
+    public String testCustomLB() {
+        return serverPort;
     }
 
 }

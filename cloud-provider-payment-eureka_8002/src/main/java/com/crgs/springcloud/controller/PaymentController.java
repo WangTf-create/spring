@@ -42,4 +42,14 @@ public class PaymentController {
         Payment payment = paymentService.getPaymentById(id);
         return CommonResult.okMessage(payment, serverPort);
     }
+
+    /**
+     * 用于测试自定义的LB（load balance）负载均衡
+     */
+    @GetMapping(value = "/payment/custom/balance")
+    public String testCustomLB() {
+        return serverPort;
+    }
+
+
 }

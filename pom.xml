@@ -10,14 +10,16 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>cloud-provider-payment_8001</module>
-        <module>cloud-consumer-order_80</module>
+        <module>cloud-provider-payment-eureka_8001</module>
+        <module>cloud-consumer-order-eureka_80</module>
         <module>cloud-common-apis</module>
         <module>cloud-eureka-server_7001</module>
         <module>cloud-eureka-server_7002</module>
-        <module>cloud-provider-payment_8002</module>
+        <module>cloud-provider-payment-eureka_8002</module>
         <module>cloud-provider-payment-zk_8004</module>
-        <module>cloud-consumerzk-order_80</module>
+        <module>cloud-consumer-order-zk_80</module>
+        <module>cloud-provider-payment-consul_8005</module>
+        <module>cloud-consumer-order-consul_80</module>
     </modules>
 
 
