@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>cloud-provider-payment_8002</artifactId>
+    <artifactId>cloud-provider-payment-eureka_8002</artifactId>
     <description>支付模块集群第二个节点</description>
 
     <properties>
